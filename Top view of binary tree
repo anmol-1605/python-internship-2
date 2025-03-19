@@ -1,0 +1,27 @@
+from binary_tree import BinaryTree
+from collections import deque
+
+def top_view(root):
+    if not root:
+        return
+    queue = deque([(root, 0)])
+    hd_map = {}
+    while queue:
+        node, hd = queue.popleft()
+        if hd not in hd_map:
+            hd_map[hd] = node.data
+        if node.left:
+            queue.append((node.left, hd - 1))
+        if node.right:
+            queue.append((node.right, hd + 1))
+    for key in sorted(hd_map):
+        print(hd_map[key], end=" ")
+        
+
+if __name__ == "__main__":
+    tree = BinaryTree()
+    for value in [1, 2, 3, 4, 5, 6, 7]:
+        tree.insert(value)
+    root = tree.get_root()
+    print("Top View:")
+    top_view(root)
