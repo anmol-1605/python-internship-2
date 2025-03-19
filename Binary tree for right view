@@ -1,0 +1,22 @@
+from binary_tree import BinaryTree
+
+def right_view_util(root, level, max_level):
+    if not root:
+        return
+    if max_level[0] < level:
+        print(root.data, end=" ")
+        max_level[0] = level
+    right_view_util(root.right, level + 1, max_level)
+    right_view_util(root.left, level + 1, max_level)
+
+def right_view(root):
+    max_level = [0]
+    right_view_util(root, 1, max_level)
+
+if __name__ == "__main__":
+    tree = BinaryTree()
+    for value in [1, 2, 3, 4, 5, 6, 7]:
+        tree.insert(value)
+    root = tree.get_root()
+    print("Right View:")
+    right_view(root)
