@@ -1,0 +1,13 @@
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        rev = ""
+        for char in s:
+            if char.isalnum():
+                rev += char.lower()
+        
+        return rev == rev[::-1]
+
+
+
+Input: s = "A man, a plan, a canal: Panama"
+Output: true
