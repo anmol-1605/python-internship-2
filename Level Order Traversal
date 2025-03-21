@@ -1,0 +1,22 @@
+from binary_tree import BinaryTree
+from collections import deque
+
+def level_order(root):
+    if not root:
+        return
+    queue = deque([root])
+    while queue:
+        node = queue.popleft()
+        print(node.data, end=" ")
+        if node.left:
+            queue.append(node.left)
+        if node.right:
+            queue.append(node.right)
+
+if __name__ == "__main__":
+    tree = BinaryTree()
+    for value in [10, 20, 30, 40, 50, 60, 70]:
+        tree.insert(value)
+    root = tree.get_root()
+    print("Level Order Traversal:")
+    level_order(root)
