@@ -1,0 +1,5 @@
+def char_case_change(input_str: str) -> str:
+    return ''.join([ch.lower() if ch.isupper() else ch.upper() for ch in input_str])
+
+if __name__ == "__main__":
+    print(char_case_change("Hello All22"))
