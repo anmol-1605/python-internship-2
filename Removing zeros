@@ -1,0 +1,8 @@
+def remove_leading_zeros(input_str: str) -> str:
+    i = 0
+    while i < len(input_str) and input_str[i] == '0':
+        i += 1
+    return input_str[i:] if i < len(input_str) else '0'
+
+if __name__ == "__main__":
+    print(remove_leading_zeros("000012356098"))  
