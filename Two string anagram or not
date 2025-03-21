@@ -1,0 +1,20 @@
+def anagram(str1, str2):
+    if len(str1) != len(str2):
+        return False
+    count = [0] * 256 
+    for ch in str1:
+        count[ord(ch)] += 1
+    for ch in str2:
+        count[ord(ch)] -= 1
+        if count[ord(ch)] < 0:
+            return False
+    return True
+
+if __name__ == "__main__":
+    print(anagram("batman", "manbat")) 
+    print(anagram("batmans", "manbat"))  
+
+
+
+Input: s = "anagram", t = "nagaram"
+Output: True
