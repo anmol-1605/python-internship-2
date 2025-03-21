@@ -1,0 +1,17 @@
+class GraphEdgeList:
+    def __init__(self):
+        self.edges = []
+
+    def add_edge(self, u, v, weight=1):
+        self.edges.append((u, v, weight))
+
+    def display(self):
+        for edge in self.edges:
+            print(edge)
+
+g = GraphEdgeList()
+g.add_edge(0, 1, 1)
+g.add_edge(1, 2, 1)
+g.add_edge(2, 3, 1)
+g.add_edge(3, 0, 1)
+g.display()
