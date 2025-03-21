@@ -1,0 +1,15 @@
+def expand_string(input_str):
+    result = []
+    i = 0
+    while i < len(input_str):
+        if input_str[i].isdigit():
+            count = int(input_str[i])
+            i += 1
+            if i < len(input_str):
+                result.append(input_str[i] * count)
+        else:
+            result.append(input_str[i])
+        i += 1
+    return ''.join(result)
+if __name__ == "__main__":
+    print(expand_string("2a1b3c"))
