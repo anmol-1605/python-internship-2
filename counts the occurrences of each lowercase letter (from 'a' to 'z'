@@ -1,0 +1,15 @@
+input_string = "bz"
+input_string2="bbz"
+alcount = []
+
+for i in range(97, 123):  
+    char = chr(i) 
+    print(char)
+    count = input_string.count(char) 
+    alcount.append(count)  
+print(alcount)
+
+
+
+
+Hariq@02
