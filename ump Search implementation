@@ -1,0 +1,12 @@
+import math
+def jump_search(arr, x):
+    n = len(arr)
+    step = int(math.sqrt(n))
+    prev, curr = 0, 0
+    while curr < n and arr[curr] < x:
+        prev = curr
+        curr += step
+    for i in range(prev, min(curr, n)):
+        if arr[i] == x:
+            return i
+    return -1
