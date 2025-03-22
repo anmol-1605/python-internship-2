@@ -1,0 +1,10 @@
+def binary_search_recursive(arr, left, right, x):
+    if left > right:
+        return -1
+    mid = left + (right - left) // 2
+    if arr[mid] == x:
+        return mid
+    elif arr[mid] < x:
+        return binary_search_recursive(arr, mid + 1, right, x)
+    else:
+        return binary_search_recursive(arr, left, mid - 1, x)
