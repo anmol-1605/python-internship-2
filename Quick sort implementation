@@ -1,0 +1,53 @@
+def quick_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    pivot = arr[len(arr) // 2]
+    left = [x for x in arr if x < pivot]
+    print("left Value ",left)
+    middle = [x for x in arr if x == pivot]
+    print("Middle Value ",middle)
+    right = [x for x in arr if x > pivot]
+    print("Right Value ",right)
+    return quick_sort(left) + middle + quick_sort(right)
+arr=[4,5,2,1,3,33,0]
+result=quick_sort(arr)
+print(result)
+
+
+
+
+
+
+# # # # or 
+
+# # # 1
+
+# import random
+# def swap(arr, i, j):
+#     arr[i], arr[j] = arr[j], arr[i]
+# def partition(arr, low, high):
+#     pivot_idx = random.randint(low, high)
+#     swap(arr, pivot_idx, high)
+#     pivot = arr[high]
+#     i = low - 1
+#     for j in range(low, high):
+#         if arr[j] < pivot:
+#             i += 1
+#             swap(arr, i, j)
+#     swap(arr, i + 1, high)
+#     return i + 1
+
+# def quickSort(arr, low, high):
+#     while low < high:
+#         pi = partition(arr, low, high)
+#         if pi - low < high - pi:
+#             quickSort(arr, low, pi - 1)
+#             low = pi + 1
+#         else:
+#             quickSort(arr, pi + 1, high)
+#             high = pi - 1
+
+# if __name__ == "__main__":
+#     arr = [10, 7, 8, 9, 1, 5]
+#     quickSort(arr, 0, len(arr) - 1)
+#     print(*arr)
