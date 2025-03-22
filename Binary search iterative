@@ -1,0 +1,38 @@
+def binary_search_iterative(arr, x):
+    left, right = 0, len(arr) - 1
+    while left <= right:
+        mid = left + (right - left) // 2
+        if arr[mid] == x:
+            return mid
+        elif arr[mid] < x:
+            left = mid + 1
+        else:
+            right = mid - 1
+    return -1
+
+
+
+# import numpy as np
+# max_int32 = np.iinfo(np.int32).max 
+
+# left = np.int32(max_int32) 
+# print("left: ",left )  
+# right = np.int32(max_int32 - 1) 
+# print("Right ",right)
+
+# mid_wrong = left+(right-left)//2
+# print("Wrong Mid:", mid_wrong)
+
+#or
+
+
+# def binary_search_recursive(arr, left, right, x):
+#     if left > right:
+#         return -1
+#     mid = left + (right - left) // 2
+#     if arr[mid] == x:
+#         return mid
+#     elif arr[mid] < x:
+#         return binary_search_recursive(arr, mid + 1, right, x)
+#     else:
+#         return binary_search_recursive(arr, left, mid - 1, x)
